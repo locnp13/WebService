@@ -16,9 +16,9 @@ public class Student {
     private String ho_va_ten; 
     private Date ngay_sinh; 
     private String khoi_nganh; 
-    private int diem_mon_1; 
-    private int diem_mon_2; 
-    private int diem_mon_3;
+    private float diem_mon_1; 
+    private float diem_mon_2; 
+    private float diem_mon_3;
 
     public String getSo_bao_danh() {
         return so_bao_danh;
@@ -36,15 +36,15 @@ public class Student {
         return khoi_nganh;
     }
 
-    public int getDiem_mon_1() {
+    public float getDiem_mon_1() {
         return diem_mon_1;
     }
 
-    public int getDiem_mon_2() {
+    public float getDiem_mon_2() {
         return diem_mon_2;
     }
 
-    public int getDiem_mon_3() {
+    public float getDiem_mon_3() {
         return diem_mon_3;
     }
 
@@ -64,15 +64,15 @@ public class Student {
         this.khoi_nganh = khoi_nganh;
     }
 
-    public void setDiem_mon_1(int diem_mon_1) {
+    public void setDiem_mon_1(float diem_mon_1) {
         this.diem_mon_1 = diem_mon_1;
     }
 
-    public void setDiem_mon_2(int diem_mon_2) {
+    public void setDiem_mon_2(float diem_mon_2) {
         this.diem_mon_2 = diem_mon_2;
     }
 
-    public void setDiem_mon_3(int diem_mon_3) {
+    public void setDiem_mon_3(float diem_mon_3) {
         this.diem_mon_3 = diem_mon_3;
     }
 

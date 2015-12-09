@@ -5,10 +5,13 @@
  */
 package org.me.ShowMark;
 
+
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.ejb.Stateless;
+import javax.jws.WebParam;
 import org.me.entity.Student;
+import org.me.model.StudentModel;
 
 /**
  *
@@ -17,30 +20,19 @@ import org.me.entity.Student;
 @WebService(serviceName = "CalculatorWS")
 @Stateless()
 public class ShowMark {
-
-
-
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "show_Student")
-    public Student show_Student() {
-        Student student= new Student();
-        student.setSo_bao_danh("011111");
-        student.setHo_va_ten("Nguyen Phuc Loc ");
-        student.setKhoi_nganh("A");
-        student.setDiem_mon_1(10);
-        student.setDiem_mon_2(10);
-        student.setDiem_mon_3(10);
-        return student;
-    }
+    StudentModel studentModel = new StudentModel();
 
     /**
      * Web service operation
+     * @param so_bao_danh
+     * @param ho_va_ten
+     * @return 
      */
     @WebMethod(operationName = "get_Student_Information")
-    public Student get_Student_Information(String so_bao_danh) {
-        //TODO write your implementation code here:
-        return null;
+    public Student get_Student_Information(@WebParam(name = "so_bao_danh") final String so_bao_danh, @WebParam(name = "ho_va_ten") final String ho_va_ten) {
+        return studentModel.getStudent(so_bao_danh, ho_va_ten);
     }
+
+
+
 }
