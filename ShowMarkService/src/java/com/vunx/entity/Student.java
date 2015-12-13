@@ -19,7 +19,8 @@ public class Student {
     private float diem_mon_1; 
     private float diem_mon_2; 
     private float diem_mon_3;
-
+    private float tong_diem;
+    private float diem_trung_tuyen;
     public String getSo_bao_danh() {
         return so_bao_danh;
     }
@@ -48,6 +49,14 @@ public class Student {
         return diem_mon_3;
     }
 
+    public float getTong_diem() {
+        return tong_diem;
+    }
+
+    public float getDiem_trung_tuyen() {
+        return diem_trung_tuyen;
+    }
+    
     public void setSo_bao_danh(String so_bao_danh) {
         this.so_bao_danh = so_bao_danh;
     }
@@ -74,11 +83,19 @@ public class Student {
 
     public void setDiem_mon_3(float diem_mon_3) {
         this.diem_mon_3 = diem_mon_3;
+    }    
+
+    public void setTong_diem(float tong_diem) {
+        this.tong_diem = tong_diem;
+    }
+
+    public void setDiem_trung_tuyen(float diem_trung_tuyen) {
+        this.diem_trung_tuyen = diem_trung_tuyen;
     }
 
     @Override
     public String toString() {
-        return "Student{" + "so_bao_danh=" + so_bao_danh + ", ho_va_ten=" + ho_va_ten + ", ngay_sinh=" + ngay_sinh + ", khoi_nganh=" + khoi_nganh + ", diem_mon_1=" + diem_mon_1 + ", diem_mon_2=" + diem_mon_2 + ", diem_mon_3=" + diem_mon_3 + '}';
+        return "Student{" + "so_bao_danh=" + so_bao_danh + ", ho_va_ten=" + ho_va_ten + ", ngay_sinh=" + ngay_sinh + ", khoi_nganh=" + khoi_nganh + ", diem_mon_1=" + diem_mon_1 + ", diem_mon_2=" + diem_mon_2 + ", diem_mon_3=" + diem_mon_3 + ", tong_diem=" + tong_diem + ", diem_trung_tuyen=" + diem_trung_tuyen + '}';
     }
     
 }

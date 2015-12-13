@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.vunx.model;
+
 import com.vunx.entity.Student;
 import java.sql.*;
 
@@ -18,7 +19,7 @@ public class StudentModel {
     static final String PORT = "3306";
     static final String DATABASE = "hanu";
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE+"";
+    static final String DB_URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE + "";
 
     //  Database credentials
     static final String USER = "locnp";
@@ -49,7 +50,7 @@ public class StudentModel {
         Student student = new Student();
         Statement stmt = null;
         String sql;
-        sql = "SELECT * FROM hanu.2014_ketquathi WHERE so_bao_danh=" + '"' + so_bao_danh + '"' + " OR ho_va_ten=" + '"' + ho_va_ten + '"';
+        sql = "SELECT * FROM hanu.2014_ketquathi INNER JOIN hanu.2014_khoathi ON hanu.2014_ketquathi.ma_nganh=hanu.2014_khoathi.ma_nganh WHERE hanu.2014_ketquathi.so_bao_danh=" + '"' + so_bao_danh + '"' + " OR hanu.2014_ketquathi.ho_va_ten=" + '"' + ho_va_ten +'"';
         System.out.println(sql);
         try {
             stmt = conn.createStatement();
@@ -62,6 +63,8 @@ public class StudentModel {
                 student.setDiem_mon_1(rs.getFloat("diem_mon_1"));
                 student.setDiem_mon_2(rs.getFloat("diem_mon_2"));
                 student.setDiem_mon_3(rs.getFloat("diem_mon_3"));
+                student.setTong_diem(rs.getFloat("tong_diem"));
+                student.setDiem_trung_tuyen(rs.getFloat("diem_trung_tuyen"));
                 System.out.println(student.toString());
             }
             //STEP 6: Clean-up environment
@@ -73,4 +76,3 @@ public class StudentModel {
         return student;
     }
 }
-
